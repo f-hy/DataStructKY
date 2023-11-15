@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.27)
+project(core)
+aux_source_directory(. SRC_LIST)
+set(LIBRARY_OUTPUT_PATH ${LIB_PATH})
+add_library(${CORE_LIB} SHARED ${SRC_LIST})
