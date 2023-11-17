@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.26)
 project(treeTest)
 aux_source_directory(. SRC_LIST)
 #link_directories(${LIB_PATH})

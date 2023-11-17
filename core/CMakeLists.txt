@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.26)
 project(core)
 aux_source_directory(. SRC_LIST)
 set(LIBRARY_OUTPUT_PATH ${LIB_PATH})

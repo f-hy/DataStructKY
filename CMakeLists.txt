@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.26)
 project(17B23)
 set(CMAKE_CXX_STANDARD 17)
 set(HEAD_PATH ${CMAKE_CURRENT_SOURCE_DIR}/core/include)# 头文件目录
