@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION ${CMAKE_VERSION})
+project(${C_LIB})
+set(LIBRARY_OUTPUT_PATH ${LIB_PATH})
+aux_source_directory(. SRC_LIST)
+add_library(${PROJECT_NAME} SHARED ${SRC_LIST})
+target_include_directories(${PROJECT_NAME} PUBLIC include)

@@ -1,7 +1,6 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION ${CMAKE_VERSION})
 project(test)
-aux_source_directory(. SRC_LIST)
 link_directories(${LIB_PATH})
 set(EXECUTABLE_OUTPUT_PATH ${EXEC_PATH})
-add_executable(${PROJECT_NAME} ${SRC_LIST})
-target_link_libraries(${PROJECT_NAME} ${CORE_LIB})
+
+add_subdirectory(cm)

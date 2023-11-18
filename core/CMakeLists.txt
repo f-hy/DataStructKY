@@ -1,8 +1,0 @@
-cmake_minimum_required(VERSION 3.26)
-project(core)
-aux_source_directory(./c C_LIST)
-aux_source_directory(./cm CM_LIST)
-aux_source_directory(./cc CC_LIST)
-set(SRC_LIST ${C_LIST} ${CM_LIST} ${CC_LIST})
-set(LIBRARY_OUTPUT_PATH ${LIB_PATH})
-add_library(${CORE_LIB} SHARED ${SRC_LIST})
