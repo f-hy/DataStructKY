@@ -8,6 +8,7 @@
 #include<cstring>
 #include"ds.h"
 void PreInCreate(BiTree &T, std::string nlr, std::string lnr);//前序和中序创建二叉树
+void PreInCreate(BiTree &T, ElemType *nlr, ElemType *lnr, int n);//前序和中序创建二叉树
 void PrintBiTree(BiTree T);//打印二叉树
 void visit(ElemType e);//访问结点
 void PreOrderRecursion(BiTree T);//前序遍历
@@ -26,6 +27,7 @@ const BiTNode* CommonAncestor(BiTree T, const BiTNode* node1, const BiTNode* nod
 bool isEqual(BiTree T1, BiTree T2);//两树是否相等
 bool DestroyBiTree(BiTree &T);//销毁二叉树
 void CopyBiTree(BiTree T1, BiTree &T2);//复制二叉树
+int WPL(BiTree T, int level=1);//带权路径长度
 //线索二叉树
 void InThread(BiThreadTree &p, BiThreadTree &pre);//中序线索化
 void CreateInThread(BiThreadTree &T);//中序线索化

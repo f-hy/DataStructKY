@@ -29,6 +29,22 @@ void PreInCreate(BiTree&T, const std::string nlr, const std::string lnr) {
   PreInCreate_(T, nlr, lnr);
 }
 
+void PreInCreate_(BiTree&T, ElemType *nlr, ElemType *lnr, int n) {
+  int nl = 0;
+  for (; nlr[0] != lnr[nl]; ++nl);
+  T = (BiTNode *)malloc(sizeof(BiTNode));
+  T->data = nlr[0];
+  PreInCreate(T->lchild, nlr+1, lnr, nl);
+  PreInCreate(T->rchild, nlr+nl+1, lnr+nl+1, n-nl-1);
+}
+void PreInCreate(BiTree &T, ElemType *nlr, ElemType *lnr, int n) {
+  if(n==0) {
+    T=nullptr;
+    return;
+  }
+  PreInCreate_(T, nlr, lnr, n);
+}
+
 void PrintBiTree(BiTree T) {
   if (T == nullptr) {
     return;
@@ -289,6 +305,15 @@ void CopyBiTree(BiTree T1, BiTree&T2) {
   T2->data = T1->data;
   CopyBiTree(T1->lchild, T2->lchild);
   CopyBiTree(T1->rchild, T2->rchild);
+}
+
+int WPL(BiTree T, int level) {
+  if(T==nullptr) return 0;
+  if(T->lchild==nullptr)
+    if(T->rchild==nullptr) return level*T->data;
+    else return WPL(T->rchild,level+1);
+  else if(T->rchild==nullptr) return WPL(T->lchild,level+1);
+  return WPL(T->lchild,level+1)+WPL(T->rchild,level+1);
 }
 
 BiThreadNode* FirstNode(BiThreadNode* p) {

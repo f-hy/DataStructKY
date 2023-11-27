@@ -22,6 +22,9 @@ LinkList GetElem(LinkList L, int i);//按位查找
 LinkList LocateElem(LinkList L, ElemType e);//按值查找
 bool ListInsert(LinkList&L, int i, ElemType e);//插入元素
 bool ListDelete(LinkList&L, int i, ElemType&e);//删除元素
+void Init(LinkList&L, ElemType *e, int n);//初始化单链表
+void Union(LinkList &dst, LinkList &src);//合并两个单链表
+void visit(LinkList L);//访问元素
 //Stack
 void InitStack(SqStack&S);//初始化栈
 bool StackEmpty(SqStack S);//判断栈是否为空

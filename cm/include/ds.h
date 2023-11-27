@@ -5,7 +5,7 @@
 #ifndef DS_H
 #define DS_H
 #include<iostream>
-typedef char ElemType;
+typedef int ElemType;
 // #define ElemType char
 //List//线性表
 #define SqListMaxSize 50
@@ -114,28 +114,24 @@ typedef struct {
 
 
 //Graph
-typedef char VerTexType;
+typedef char VertexType;
 typedef int EdgeType;
 #define MaxVertexNum 50
 typedef struct {
-    VerTexType vex[MaxVertexNum];//顶点向量
+    VertexType vex[MaxVertexNum];//顶点向量
     EdgeType edge[MaxVertexNum][MaxVertexNum];//邻接矩阵
     int vexnum, arcnum;//顶点数，边数
 } MGraph;//*邻接矩阵*，MatrixGraph
 //邻接表
-typedef struct ArcNode {
-    int adjvex;//该弧所指向的顶点的位置
-    ArcNode *next;//指向下一条弧的指针
-    // InfoType info;//网的边权值
-} ArcNode;//边结点
+typedef LNode ArcNode;//边结点
 typedef struct VNode {
-    VerTexType data;//顶点信息
+    VertexType data;//顶点信息
     ArcNode *first;//指向第一条依附该顶点的弧的指针
-} VNode, AdjList[MaxVertexNum];//顶点结点，邻接表
+} VNode, AdjList[MaxVertexNum];//VertexNode, AdjacencyList
 typedef struct {
     AdjList vertices;
-    int vexnum, arcnum;//顶点数，边数
-} ALGraph;//邻接表，AdjacencyList
+    int vexnum, arcnum;//顶点数，边数, arc弧
+} ALGraph;//邻接表, AdjacencyListGraph
 //十字链表
 typedef struct ArcBox {
     int tailvex, headvex;//该弧的尾和头顶点的位置
@@ -143,7 +139,7 @@ typedef struct ArcBox {
     // InfoType info;//该弧相关信息的指针
 } ArcBox;//弧结点
 typedef struct VexNode {
-    VerTexType data;//顶点信息
+    VertexType data;//顶点信息
     ArcBox *firstin, *firstout;//分别指向该顶点第一条入弧和出弧
 } VexNode;//顶点结点
 typedef struct {
@@ -158,7 +154,7 @@ typedef struct AMArcNode {
     // InfoType info;//该边信息的指针
 } AMArcNode;//边结点
 typedef struct AMVexNode {
-    VerTexType data;//顶点信息
+    VertexType data;//顶点信息
     AMArcNode *firstedge;//指向第一条依附该顶点的边的指针
 } AMVexNode;//顶点结点
 typedef struct {
@@ -171,7 +167,7 @@ typedef struct {
     // InfoType info;//该边信息的指针
 } Edge;//边结点
 typedef struct {
-    VerTexType vex[MaxVertexNum];//顶点向量
+    VertexType vex[MaxVertexNum];//顶点向量
     Edge edge[MaxVertexNum];//边集数组
     int vexnum, arcnum;//顶点数，边数
 } EGraph;//边集数组，EdgeArray
