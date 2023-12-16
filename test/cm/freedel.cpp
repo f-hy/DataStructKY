@@ -17,5 +17,18 @@ int main() {
   cout<<L->data<<endl;
   p = L1;
   cout<<p->data<<endl;
+  BiTree root = (BiTree) malloc(sizeof(BiTNode));
+  root->data = 1;
+  root->lchild=nullptr;
+  root->rchild=(BiTree) malloc(sizeof(BiTNode));
+  root->rchild->data=2;
+  root->rchild->lchild=root->rchild->rchild=nullptr;
+  cout<<root<<endl;
+  cout<<root->data<<endl;
+  cout<<sizeof(*root)<<endl;
+  cout<<sizeof(root->lchild)<<endl;
+  cout<<sizeof(*root->rchild)<<endl;
+  cout<<&root->rchild<<endl;
+  cout<<root->rchild<<endl;
   return 0;
 }
